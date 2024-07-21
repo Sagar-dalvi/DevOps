@@ -1,0 +1,176 @@
+Git Basics Guide
+What is Git?
+Git is a distributed version control system that helps manage changes to source code over time.
+It allows multiple people to collaborate on a project by tracking changes, merging updates,
+and managing different versions of the code.
+______________________________________________________________________________________________________________________________________________
+Key Concepts
+Repository (Repo): A directory that contains your project files and the history of changes.
+Commit: A snapshot of your project at a specific point in time.
+Branch: A separate line of development within a repository.
+Merge: Integrating changes from one branch into another.
+Clone: Copying an existing repository to your local machine.
+Push: Uploading your changes to a remote repository.
+Pull: Fetching and integrating changes from a remote repository into your local repository.
+_________________________________________________________________________________________________________________________________________________
+Common Git Commands
+
+Configuration
+
+Set Up User Info
+
+Command: git config --global user.name "Your Name"
+Command: git config --global user.email "you@example.com"
+Explanation: Configures your name and email address for Git commits.
+Repository Management
+--------------------------------------------------------------------------------
+Create a New Repository
+
+Command: git init
+Explanation: Initializes a new Git repository in your current directory.
+--------------------------------------------------------------------------------
+Clone a Repository
+
+Command: git clone <repository-url>
+Example: git clone https://github.com/user/repo.git
+Explanation: Creates a copy of a remote repository on your local machine.
+Basic Workflow
+--------------------------------------------------------------------------------
+Check Repository Status
+
+Command: git status
+Explanation: Shows the current state of the working directory and staging area.
+-----------------------------------------------------------------------------------
+Add Files to Staging Area
+-
+Command: git add <file>
+Example: git add index.html
+Explanation: Stages a file for the next commit.
+-------------------------------------------------------------------------------------
+Commit Changes
+
+Command: git commit -m "Commit message"
+Example: git commit -m "Add new feature"
+Explanation: Saves the changes in the staging area to the repository with a message.
+--------------------------------------------------------------------------------------
+View Commit History
+
+Command: git log
+Explanation: Displays the commit history of the repository.
+Branching and Merging
+--------------------------------------------------------------------------------------
+Create a New Branch
+
+Command: git branch <branch-name>
+Example: git branch feature-branch
+Explanation: Creates a new branch.
+--------------------------------------------------------------------------------------
+Switch to a Branch
+
+Command: git checkout <branch-name>
+Example: git checkout feature-branch
+Explanation: Switches to the specified branch.
+---------------------------------------------------------------------------------------
+Create and Switch to a Branch
+
+Command: git checkout -b <branch-name>
+Example: git checkout -b feature-branch
+Explanation: Creates a new branch and switches to it.
+Merge Branches
+
+Command: git merge <branch-name>
+Example: git merge feature-branch
+Explanation: Merges changes from the specified branch into the current branch.
+Remote Repositories
+Add a Remote Repository
+
+Command: git remote add <name> <repository-url>
+Example: git remote add origin https://github.com/user/repo.git
+Explanation: Adds a remote repository to your local Git configuration.
+Push Changes to Remote Repository
+
+Command: git push <remote> <branch>
+Example: git push origin main
+Explanation: Uploads your local commits to the remote repository.
+Pull Changes from Remote Repository
+
+Command: git pull <remote> <branch>
+Example: git pull origin main
+Explanation: Fetches and integrates changes from the remote repository into your local branch.
+Fetch Changes from Remote Repository
+
+Command: git fetch <remote>
+Example: git fetch origin
+Explanation: Retrieves changes from the remote repository but does not merge them.
+Undoing Changes
+Unstage a File
+
+Command: git reset <file>
+Example: git reset index.html
+Explanation: Removes a file from the staging area.
+Discard Local Changes
+
+Command: git checkout -- <file>
+Example: git checkout -- index.html
+Explanation: Discards changes in the working directory for a specific file.
+Revert a Commit
+
+Command: git revert <commit-hash>
+Example: git revert a1b2c3d
+Explanation: Creates a new commit that undoes the changes made by the specified commit.
+Step-by-Step Practice Guide
+Set Up Git
+
+Install Git from Git's official website.
+Configure your user name and email:
+bash
+Copy code
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+Create a New Repository
+
+Navigate to your project directory and initialize a Git repository:
+bash
+Copy code
+mkdir my-project
+cd my-project
+git init
+Add and Commit Files
+
+Create a file and add it to the repository:
+bash
+Copy code
+echo "Hello, Git!" > hello.txt
+git add hello.txt
+git commit -m "Add hello.txt"
+Create and Work with Branches
+
+Create a new branch, switch to it, and make changes:
+
+git checkout -b new-feature
+echo "New feature content" > feature.txt
+git add feature.txt
+git commit -m "Add feature.txt"
+Merge Branches
+
+Switch back to the main branch and merge the new feature branch:
+
+git checkout main
+git merge new-feature
+Push to a Remote Repository
+
+Add a remote repository and push your changes:
+
+git remote add origin https://github.com/yourusername/my-project.git
+git push -u origin main
+Pull from a Remote Repository
+
+Fetch and integrate changes from the remote repository:
+
+git pull origin main
+Undo Changes
+
+Unstage and discard changes as needed:
+
+git reset hello.txt
+git checkout -- feature.txt
