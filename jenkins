@@ -19,54 +19,54 @@ Review and Launch: Review your instance settings and click "Launch". Select an e
 Step 2: Connect to Your EC2 Instance
 Open your terminal (Mac/Linux) or use PuTTY (Windows).
 Connect to your instance using SSH:
-bash
-Copy code
+
+
 ssh -i /path/to/your-key-pair.pem ec2-user@your-ec2-instance-public-dns
 Step 3: Install Jenkins
 Update the package manager:
 
-bash
-Copy code
+
+
 sudo yum update -y
 Install Java (Jenkins requires Java):
 
-bash
-Copy code
+
+
 sudo amazon-linux-extras install java-openjdk11 -y
 Add the Jenkins repository:
 
-bash
-Copy code
+
+
 sudo wget -O /etc/yum.repos.d/jenkins.repo \
     https://pkg.jenkins.io/redhat-stable/jenkins.repo
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
 Install Jenkins:
 
-bash
-Copy code
+
+
 sudo yum install jenkins -y
 Start Jenkins:
 
-bash
-Copy code
+
+
 sudo systemctl start jenkins
 Enable Jenkins to start at boot:
 
-bash
-Copy code
+
+
 sudo systemctl enable jenkins
 Step 4: Configure Jenkins
 Open your web browser and navigate to:
 
 plaintext
-Copy code
+
 http://your-ec2-instance-public-dns:8080
 Unlock Jenkins:
 
 The initial administrative password is located in /var/lib/jenkins/secrets/initialAdminPassword.
 Retrieve it using the command:
-bash
-Copy code
+
+
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 Copy the password and paste it into the Jenkins web interface to unlock Jenkins.
 Follow the Jenkins setup wizard:
@@ -77,6 +77,6 @@ Configure the Jenkins URL (it will usually auto-detect).
 Step 5: Access Jenkins
 After the setup is complete, you can access Jenkins using the URL:
 plaintext
-Copy code
+
 http://your-ec2-instance-public-dns:8080
 You now have Jenkins installed on your EC2 instance and ready to use for your CI/CD needs.
